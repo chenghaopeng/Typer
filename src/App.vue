@@ -2,7 +2,7 @@
   <div id="app">
     <codemirror ref="myCm" v-model="code" :options="cmOptions"></codemirror>
     <div class="footer">
-      <div>由 PP 用 Vue 、 vue-codermirror 构建</div>
+      <div>由 PP 用 Vue 、 vue-codermirror 构建 <a href="https://github.com/chenghaopeng/Typer">GitHub</a></div>
       <div v-if="view === 0" class="frame">
         <button @click="handleClear">清空</button>
         <input v-model="step" type="text"/>
