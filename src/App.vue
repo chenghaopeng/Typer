@@ -5,6 +5,7 @@
       <div>由 PP 用 Vue 、 vue-codermirror 构建 <a href="https://github.com/chenghaopeng/Typer">GitHub</a></div>
       <div v-if="view === 0" class="frame">
         <button @click="handleClear">清空</button>
+        <input v-model="speed" type="text" style="width: 30px"/>
         <input v-model="step" type="text"/>
         <button @click="handleStart">开始</button>
       </div>
@@ -48,7 +49,8 @@ export default {
       codes: [],
       lines: [],
       now: -1,
-      running: null
+      running: null,
+      speed: 50
     }
   },
   methods: {
@@ -89,7 +91,7 @@ export default {
         }
         clearInterval(this.running)
         this.running = null
-      }, 200)
+      }, this.speed)
     },
     handleBack () {
       this.view = 0
